@@ -38,7 +38,7 @@ for i in range(2,400):
     for item in json_as_dict:
         p_id = item["id"]
         print(p_id)
-        date = item["date"].split('T')[0]:
+        date = item["date"].split('T')[0]
         timetime = item["date"].split('T')[1]
         tex =""
         if "rendered" in item["content"]: 
