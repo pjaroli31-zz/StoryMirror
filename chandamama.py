@@ -14,7 +14,7 @@ dest_lang = ["hi","bn","gu","mr"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
-for i in range(0,200):
+for i in range(0,400):
     querystring = {"page":str(i),"_embed":"true"}
     print(i)
     headers = {
@@ -47,7 +47,8 @@ for i in range(0,200):
                 img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
         #print(img_url)
         t = ""
-        tag_list = item["_embedded"]["wp:term"]
+        if "wp:term" in item["_embedded"]:
+            tag_list = item["_embedded"]["wp:term"]
         for tag in tag_list:
             for x in tag:
                 t += x["name"]+'\n'
