@@ -14,7 +14,7 @@ dest_lang = ["hi","bn","gu","mr"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
-for i in range(2,400):
+for i in range(8,400):
     querystring = {"page":str(i),"_embed":"true"}
     print(i)
     headers = {
@@ -86,7 +86,9 @@ for i in range(2,400):
 
         url2 = "https://techcrunch.com/wp-json/wp/v2/comments?post="+str(p_id)+"&order=asc&tc_hierarchical=flat"
         comm_response = requests.request("GET",url2)
-        comm_as_dict = json.loads(comm_response.text)
+        comm_as_dict = {}
+        if len(comm_response.text) > 2:
+            comm_as_dict = json.loads(comm_response.text)
         co = []
        # print(len(comm_as_dict))
         if len(comm_as_dict) >0:
