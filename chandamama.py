@@ -10,7 +10,7 @@ gu = list()
 bn = list()
 mr = list()
 img_url = ""
-dest_lang = ["hi","bn"]
+dest_lang = ["hi","bn","gu","mr"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
@@ -61,7 +61,7 @@ for i in range(0,500):
         lan_title = []
         getT = ""
         countT = int(len(title)/500)
-        for k in range(0,2):
+        for k in range(0,4):
             for num in range(0,countT):
                 getT += chan(title[500*num:500 *(num+1)],dest_lang[k])
             getT += chan(tex[500 * countT : len(title)-1],dest_lang[k])
@@ -72,7 +72,7 @@ for i in range(0,500):
             continue
         lan_content = []
         getC =""
-        for idx in range(0,2):
+        for idx in range(0,4):
             for num in range(0,count):
                 getC += chan(tex[4500 * num : 4500 * (num+1)],dest_lang[idx])
            
