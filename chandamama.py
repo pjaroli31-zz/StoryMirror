@@ -60,22 +60,22 @@ for i in range(0,100):
         
         lan_title = []
         getT = ""
-        countT = int(len(title)/500)
+        countT = int(len(title)/1000)
         for k in range(0,4):
             for num in range(0,countT):
-                getT += chan(title[500*num:500 *(num+1)],dest_lang[k])
-            getT += chan(tex[500 * countT : len(title)-1],dest_lang[k])
+                getT += chan(title[1000*num:1000 *(num+1)],dest_lang[k])
+            getT += chan(tex[1000 * countT : len(title)-1],dest_lang[k])
             lan_title.append(getT)
             getT =""
-        count = int(len(tex)/4000)
+        count = int(len(tex)/1000)
         #print(len(tex))
         lan_content = []
         getC =""
         for idx in range(0,4):
             for num in range(0,count):
-                getC += chan(tex[500 * num : 500 * (num+1)],dest_lang[idx])
+                getC += chan(tex[1000 * num : 1000 * (num+1)],dest_lang[idx])
            
-            getC += chan(tex[500 * count : len(tex)-1],dest_lang[idx])   
+            getC += chan(tex[1000 * count : len(tex)-1],dest_lang[idx])   
             lan_content.append(getC)
             getC = ""
 
