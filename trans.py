@@ -17,13 +17,15 @@ def getMeComments(comments,x):
 def getTransList(comments,i):
 	c_change = []
 	for c in comments:
-		geT = ""
-		countT = int(len(c[1])/500)
-		for num in range(0,countT):
-                	getT += chan(c[1][500*num:500 *(num+1)],i)
-            	getT += chan(c[1][500 * countT : len(c[1])-1],i)	
-		c_change.append( (c[0],getT))
-	return c_change
+		count = (int)(len(c[1])/500)
+		getT = ""
+		for i in range(0,count):
+			getT += chan(c[1][500*i:(i+1)*500],i)
+		getT += chan(c[1][500*count :len(c[1])],i)	
+		change_c.append(c[0],c[1])
+	return c_change	
+			
+	
 
 def getMeString(cList):
 	st = ""
