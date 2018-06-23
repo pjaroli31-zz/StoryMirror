@@ -69,7 +69,7 @@ for i in range(2,100):
             getT += chan(tex[500 * countT : len(title)-1],dest_lang[k])
             lan_title.append(getT)
             getT =""
-        count = int(len(tex)/500)
+        count = int(len(tex)/2500)
         if int(len(tex)) > 10000 :
             continue
         print(str(len(tex))+"s")
@@ -77,9 +77,9 @@ for i in range(2,100):
         getC =""
         for idx in range(0,2):
             for num in range(0,count):
-                getC += chan(tex[500 * num : 500 * (num+1)],dest_lang[idx])
+                getC += chan(tex[2500 * num : 2500 * (num+1)],dest_lang[idx])
            
-            getC += chan(tex[500 * count : len(tex)-1],dest_lang[idx])   
+            getC += chan(tex[2500 * count : len(tex)-1],dest_lang[idx])   
             lan_content.append(getC)
             getC = ""
 
