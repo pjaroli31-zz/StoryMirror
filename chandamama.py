@@ -9,7 +9,7 @@ gu = list()
 bn = list()
 mr = list()
 img_url = ""
-dest_lang = ["hi","bn","gu","mr"]
+dest_lang = ["hi","bn"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
@@ -61,7 +61,7 @@ for i in range(0,100):
         lan_title = []
         getT = ""
         countT = int(len(title)/1000)
-        for k in range(0,4):
+        for k in range(0,2):
             for num in range(0,countT):
                 getT += chan(title[1000*num:1000 *(num+1)],dest_lang[k])
             getT += chan(tex[1000 * countT : len(title)-1],dest_lang[k])
@@ -71,7 +71,7 @@ for i in range(0,100):
         #print(len(tex))
         lan_content = []
         getC =""
-        for idx in range(0,4):
+        for idx in range(0,2):
             for num in range(0,count):
                 getC += chan(tex[1000 * num : 1000 * (num+1)],dest_lang[idx])
            
@@ -95,13 +95,14 @@ for i in range(0,100):
         cList = getTransList(co,"bn")
         cstring = getMeString(cList)
         bn.append((date,time, lan_title[1],author_name,lan_content[1],link,cstring,img_url,t))
+        '''
         cList = getTransList(co,"gu")
         cstring = getMeString(cList)
         gu.append((date,time, lan_title[2],author_name,lan_content[2],link,cstring,img_url,t))
         cList = getTransList(co,"mr")
         cstring = getMeString(cList)
         mr.append((date,time, lan_title[3],author_name,lan_content[3],link,cstring,img_url,t))    
-
+        '''
         #print(cList)
 
 for d in eng:
@@ -115,15 +116,15 @@ for d in bn:
         writer.writerow(d)
 
 
-
-
-for d in gu:
-    with open("gujrati.csv","a",newline='') as myFile:
+for d in hi:
+    with open("Hindi.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
         writer.writerow(d)
 
-for d in hi:
-    with open("Hindi.csv","a",newline='') as myFile:
+
+'''
+for d in gu:
+    with open("gujrati.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
         writer.writerow(d)
 for d in mr:
@@ -131,3 +132,4 @@ for d in mr:
         writer = csv.writer(myFile)
         writer.writerow(d)                    
       
+'''
