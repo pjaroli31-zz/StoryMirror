@@ -63,8 +63,12 @@ for i in range(2,400):
             author_name.append(a["name"])
             #print(a["name"])
        # print(len(tex))
-        title = item["title"]["rendered"]
-        link = item["shortlink"]
+        title =""
+        link=""
+        if "title" in item:
+            title = item["title"]["rendered"]
+        if "link" in item:    
+            link = item["link"]
         lan_title = []
         getT = ""
         countT = int(len(title)/500)
