@@ -14,7 +14,7 @@ dest_lang = ["hi","bn"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
-for i in range(7,100):
+for i in range(0,500):
     querystring = {"page":str(i),"_embed":"true"}
     print(i)
     headers = {
