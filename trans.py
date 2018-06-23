@@ -22,7 +22,7 @@ def getTransList(comments,j):
 		for i in range(0,count):
 			getT += chan(c[1][500*i:(i+1)*500],j)
 		getT += chan(c[1][500*count :len(c[1])],j)	
-		c_change.append(c[0],c[1])
+		c_change.append((c[0],c[1]))
 	return c_change	
 			
 	
