@@ -62,6 +62,7 @@ for i in range(2,100):
         lan_title = []
         getT = ""
         countT = int(len(title)/500)
+        print(str(len(title))+"t")
         for k in range(0,2):
             for num in range(0,countT):
                 getT += chan(title[500*num:500 *(num+1)],dest_lang[k])
