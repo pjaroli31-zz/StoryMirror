@@ -45,7 +45,7 @@ for i in range(2,400):
             tex = item["content"]["rendered"]
         authors = []
         if "authors" in item["_embedded"]:
-            item["_embedded"]["authors"]
+            authors = item["_embedded"]["authors"]
         img_url =""
         if "wp:featuredmedia" in item["_embedded"]:
             if len(item["_embedded"]["wp:featuredmedia"]) > 0 and "source_url" in item["_embedded"]["wp:featuredmedia"]:
