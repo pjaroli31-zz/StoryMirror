@@ -36,6 +36,7 @@ for i in range(0,100):
     json_as_dict = json.loads(json_data)
     for item in json_as_dict:
         p_id = item["id"]
+        print(p_id)
         date = item["date"].split('T')[0]
         time = item["date"].split('T')[1]
         tex = item["content"]["rendered"]
@@ -60,15 +61,15 @@ for i in range(0,100):
         lan_title = []
         for k in range(0,4):
             lan_title.append(chan(title,dest_lang[k]))
-        count = int(len(tex)/5000)
+        count = int(len(tex)/4000)
         #print(len(tex))
         lan_content = []
         getC =""
         for idx in range(0,4):
             for num in range(0,count):
-                getC += chan(tex[5000 * num : 5000 * (num+1)],dest_lang[idx])
+                getC += chan(tex[4000 * num : 4000 * (num+1)],dest_lang[idx])
            
-            getC += chan(tex[5000 * count : len(tex)-1],dest_lang[idx])   
+            getC += chan(tex[4000 * count : len(tex)-1],dest_lang[idx])   
             lan_content.append(getC)
             getC = ""
 
