@@ -15,7 +15,7 @@ url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
 for i in range(0,100):
     querystring = {"page":str(i),"_embed":"true"}
-
+    print(i)
     headers = {
         'Host': "techcrunch.com",
         'User-Agent': "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0",
@@ -40,18 +40,19 @@ for i in range(0,100):
         time = item["date"].split('T')[1]
         tex = item["content"]["rendered"]
         authors = item["_embedded"]["authors"]
-        img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
-        print(img_url)
+         
+            img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
+        #print(img_url)
         t = ""
         tag_list = item["_embedded"]["wp:term"]
         for tag in tag_list:
             for x in tag:
                 t += x["name"]+'\n'
-        print(t)        
+       # print(t)        
         author_name = []
         for a in authors:
             author_name.append(a["name"])
-            print(a["name"])
+            #print(a["name"])
        # print(len(tex))
         title = item["title"]["rendered"]
         link = item["shortlink"]
@@ -60,7 +61,7 @@ for i in range(0,100):
         for k in range(0,4):
             lan_title.append(chan(title,dest_lang[k]))
         count = int(len(tex)/5000)
-        print(len(tex))
+        #print(len(tex))
         lan_content = []
         getC =""
         for idx in range(0,4):
@@ -75,10 +76,10 @@ for i in range(0,100):
         comm_response = requests.request("GET",url2)
         comm_as_dict = json.loads(comm_response.text)
         co = []
-        print(len(comm_as_dict))
+       # print(len(comm_as_dict))
         if len(comm_as_dict) >0:
             co = getMeComments(comm_as_dict,min(4,len(comm_as_dict)))
-        print(co)    
+       # print(co)    
         cstring = getMeString(co)
         eng.append((date,time, title,author_name,tex,link,cstring,img_url,t))
         cList = getTransList(co,"hi")
