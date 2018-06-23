@@ -1,4 +1,5 @@
 import re
+import time
 from googletrans import Translator
 RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
 a = []
