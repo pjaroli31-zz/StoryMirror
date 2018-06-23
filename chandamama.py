@@ -35,6 +35,7 @@ for i in range(0,100):
     json_data = response.text
     json_as_dict = json.loads(json_data)
     for item in json_as_dict:
+        print(p_id)
         p_id = item["id"]
         date = item["date"].split('T')[0]
         time = item["date"].split('T')[1]
