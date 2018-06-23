@@ -17,7 +17,6 @@ def getMeComments(comments,x):
 def getTransList(comments,i):
 	c_change = []
 	for c in comments:
-		#print(len(c[1]))
 		geT = ""
 		countT = int(len(c[1])/500)
 		for num in range(0,countT):
