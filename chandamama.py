@@ -38,10 +38,14 @@ for i in range(2,400):
     for item in json_as_dict:
         p_id = item["id"]
         print(p_id)
-        date = item["date"].split('T')[0]
+        date = item["date"].split('T')[0]:
         timetime = item["date"].split('T')[1]
-        tex = item["content"]["rendered"]
-        authors = item["_embedded"]["authors"]
+        tex =""
+        if "rendered" in item["content"]: 
+            tex = item["content"]["rendered"]
+        authors = []
+        if "authors" in item["_embedded"]:
+            item["_embedded"]["authors"]
         img_url =""
         if "wp:featuredmedia" in item["_embedded"]:
             if len(item["_embedded"]["wp:featuredmedia"]) > 0 and "source_url" in item["_embedded"]["wp:featuredmedia"]:
@@ -114,7 +118,7 @@ for i in range(2,400):
         #print(cList)
 
 for d in eng:
-    with open("check.csv","a",newline='') as myFile:
+    with open("English.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
         writer.writerow(d)
 
