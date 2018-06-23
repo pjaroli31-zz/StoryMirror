@@ -13,7 +13,7 @@ dest_lang = ["hi","bn","gu","mr"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
 
-for i in range(1,2):
+for i in range(0,100):
     querystring = {"page":str(i),"_embed":"true"}
 
     headers = {
@@ -94,17 +94,21 @@ for i in range(1,2):
         cstring = getMeString(cList)
         mr.append((date,time, lan_title[3],author_name,lan_content[3],link,cstring,img_url,t))    
 
-        print(cList)
+        #print(cList)
 
 for d in eng:
     with open("check.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
         writer.writerow(d)
 
+for d in bn:
+    with open("Bengali.csv","a",newline='') as myFile:
+        writer = csv.writer(myFile)
+        writer.writerow(d)
 
 
 
-'''
+
 for d in gu:
     with open("gujrati.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
@@ -118,4 +122,4 @@ for d in mr:
     with open("marathi.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
         writer.writerow(d)                    
-'''      
+      
