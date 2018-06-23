@@ -17,7 +17,7 @@ def getMeComments(comments,x):
 def getTransList(comments,i):
 	c_change = []
 	for c in comments:
-		if len(c[1]) < 5000:
+		if len(c[1]) < 2000:
 		 	c_change.append( (c[0],trans.translate(c[1],dest=i,src="en").text))
 	return c_change
 
