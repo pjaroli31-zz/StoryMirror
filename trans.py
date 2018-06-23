@@ -14,14 +14,14 @@ def getMeComments(comments,x):
 	return d
 	
 
-def getTransList(comments,i):
+def getTransList(comments,j):
 	c_change = []
 	for c in comments:
 		count = (int)(len(c[1])/500)
 		getT = ""
 		for i in range(0,count):
-			getT += chan(c[1][500*i:(i+1)*500],i)
-		getT += chan(c[1][500*count :len(c[1])],i)	
+			getT += chan(c[1][500*i:(i+1)*500],j)
+		getT += chan(c[1][500*count :len(c[1])],j)	
 		change_c.append(c[0],c[1])
 	return c_change	
 			
