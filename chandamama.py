@@ -1,4 +1,4 @@
-
+import time
 from googletrans import Translator
 from trans import *
 import requests
@@ -73,6 +73,7 @@ for i in range(0,200):
         lan_content = []
         getC =""
         for idx in range(0,4):
+            time.sleep(.4)
             for num in range(0,count):
                 getC += chan(tex[4500 * num : 4500 * (num+1)],dest_lang[idx])
            
