@@ -43,7 +43,8 @@ for i in range(0,200):
         tex = item["content"]["rendered"]
         authors = item["_embedded"]["authors"]
         if "wp:featuredmedia" in item["_embedded"]:
-            img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
+            if len(item["_embedded"]["wp:featuredmedia"]) > 0 and "source_url" in item["_embedded"]["wp:featuredmedia"]:
+                img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
         #print(img_url)
         t = ""
         tag_list = item["_embedded"]["wp:term"]
