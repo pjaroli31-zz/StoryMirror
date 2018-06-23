@@ -1,3 +1,4 @@
+
 from googletrans import Translator
 from trans import *
 import requests
@@ -68,7 +69,9 @@ for i in range(2,100):
             lan_title.append(getT)
             getT =""
         count = int(len(tex)/500)
-        #print(len(tex))
+        if int(len(tex)) > 10000 :
+            continue
+        print(str(len(tex))+"s")
         lan_content = []
         getC =""
         for idx in range(0,2):
@@ -133,3 +136,5 @@ for d in mr:
         writer.writerow(d)                    
       
 '''
+
+    
