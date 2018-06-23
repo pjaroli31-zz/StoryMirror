@@ -58,11 +58,9 @@ for i in range(0,500):
        # print(len(tex))
         title = item["title"]["rendered"]
         link = item["shortlink"]
-        
         lan_title = []
         getT = ""
         countT = int(len(title)/500)
-        print(str(len(title))+"t")
         for k in range(0,2):
             for num in range(0,countT):
                 getT += chan(title[500*num:500 *(num+1)],dest_lang[k])
@@ -72,7 +70,6 @@ for i in range(0,500):
         count = int(len(tex)/4500)
         if int(len(tex)) > 10000 :
             continue
-        print(str(len(tex))+"s")
         lan_content = []
         getC =""
         for idx in range(0,2):
@@ -99,14 +96,13 @@ for i in range(0,500):
         cList = getTransList(co,"bn")
         cstring = getMeString(cList)
         bn.append((date,time, lan_title[1],author_name,lan_content[1],link,cstring,img_url,t))
-        '''
         cList = getTransList(co,"gu")
         cstring = getMeString(cList)
         gu.append((date,time, lan_title[2],author_name,lan_content[2],link,cstring,img_url,t))
         cList = getTransList(co,"mr")
         cstring = getMeString(cList)
         mr.append((date,time, lan_title[3],author_name,lan_content[3],link,cstring,img_url,t))    
-        '''
+        
         #print(cList)
 
 for d in eng:
@@ -126,7 +122,7 @@ for d in hi:
         writer.writerow(d)
 
 
-'''
+
 for d in gu:
     with open("gujrati.csv","a",newline='') as myFile:
         writer = csv.writer(myFile)
@@ -136,6 +132,6 @@ for d in mr:
         writer = csv.writer(myFile)
         writer.writerow(d)                    
       
-'''
+
 
     
