@@ -42,6 +42,7 @@ for i in range(2,400):
         timetime = item["date"].split('T')[1]
         tex = item["content"]["rendered"]
         authors = item["_embedded"]["authors"]
+        img_url =""
         if "wp:featuredmedia" in item["_embedded"]:
             if len(item["_embedded"]["wp:featuredmedia"]) > 0 and "source_url" in item["_embedded"]["wp:featuredmedia"]:
                 img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
