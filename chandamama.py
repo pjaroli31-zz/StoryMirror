@@ -40,8 +40,7 @@ for i in range(0,100):
         time = item["date"].split('T')[1]
         tex = item["content"]["rendered"]
         authors = item["_embedded"]["authors"]
-         
-            img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
+        img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
         #print(img_url)
         t = ""
         tag_list = item["_embedded"]["wp:term"]
