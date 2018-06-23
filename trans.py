@@ -17,9 +17,13 @@ def getMeComments(comments,x):
 def getTransList(comments,i):
 	c_change = []
 	for c in comments:
-		print(len(c[1]))
-		if len(c[1]) < 2000:
-		 	c_change.append( (c[0],trans.translate(c[1],dest=i,src="en").text))
+		#print(len(c[1]))
+		geT = ""
+		countT = int(len(c[1])/500)
+		for num in range(0,countT):
+                	getT += chan(c[1][500*num:500 *(num+1)],i)
+            	getT += chan(c[1][500 * countT : len(c[1])-1],i)	
+		c_change.append( (c[0],getT))
 	return c_change
 
 def getMeString(cList):
