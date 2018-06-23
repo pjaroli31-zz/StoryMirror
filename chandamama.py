@@ -8,7 +8,7 @@ hi = list()
 gu = list()
 bn = list()
 mr = list()
-
+img_url = ""
 dest_lang = ["hi","bn","gu","mr"]
 trans = Translator()
 url = "https://techcrunch.com/wp-json/tc/v1/magazine"
@@ -36,12 +36,12 @@ for i in range(0,100):
     json_as_dict = json.loads(json_data)
     for item in json_as_dict:
         p_id = item["id"]
-        print(p_id)
         date = item["date"].split('T')[0]
         time = item["date"].split('T')[1]
         tex = item["content"]["rendered"]
         authors = item["_embedded"]["authors"]
-        img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
+        if "wp:featuredmedia" in item["_embedded"]:
+            img_url = item["_embedded"]["wp:featuredmedia"][0]["source_url"]
         #print(img_url)
         t = ""
         tag_list = item["_embedded"]["wp:term"]
