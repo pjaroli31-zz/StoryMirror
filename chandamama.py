@@ -102,6 +102,7 @@ for i in range(2,400):
         time.sleep(.2)
         cList = getTransList(co,"gu")
         cstring = getMeString(cList)
+        time.sleep(.1)
         gu.append((date,timetime, lan_title[2],author_name,lan_content[2],link,cstring,img_url,t))
         cList = getTransList(co,"mr")
         cstring = getMeString(cList)
