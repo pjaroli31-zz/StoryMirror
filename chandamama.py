@@ -39,7 +39,7 @@ for i in range(0,200):
         p_id = item["id"]
         print(p_id)
         date = item["date"].split('T')[0]
-        time = item["date"].split('T')[1]
+        timetime = item["date"].split('T')[1]
         tex = item["content"]["rendered"]
         authors = item["_embedded"]["authors"]
         if "wp:featuredmedia" in item["_embedded"]:
@@ -90,19 +90,19 @@ for i in range(0,200):
             co = getMeComments(comm_as_dict,min(4,len(comm_as_dict)))
        # print(co)    
         cstring = getMeString(co)
-        eng.append((date,time, title,author_name,tex,link,cstring,img_url,t))
+        eng.append((date,timetime, title,author_name,tex,link,cstring,img_url,t))
         cList = getTransList(co,"hi")
         cstring = getMeString(cList)    
-        hi.append((date,time, lan_title[0],author_name,lan_content[0],link,cstring,img_url,t))
+        hi.append((date,timetime, lan_title[0],author_name,lan_content[0],link,cstring,img_url,t))
         cList = getTransList(co,"bn")
         cstring = getMeString(cList)
-        bn.append((date,time, lan_title[1],author_name,lan_content[1],link,cstring,img_url,t))
+        bn.append((date,timetime, lan_title[1],author_name,lan_content[1],link,cstring,img_url,t))
         cList = getTransList(co,"gu")
         cstring = getMeString(cList)
-        gu.append((date,time, lan_title[2],author_name,lan_content[2],link,cstring,img_url,t))
+        gu.append((date,timetime, lan_title[2],author_name,lan_content[2],link,cstring,img_url,t))
         cList = getTransList(co,"mr")
         cstring = getMeString(cList)
-        mr.append((date,time, lan_title[3],author_name,lan_content[3],link,cstring,img_url,t))    
+        mr.append((date,timetime, lan_title[3],author_name,lan_content[3],link,cstring,img_url,t))    
         
         #print(cList)
 
