@@ -93,6 +93,7 @@ for i in range(2,400):
             getC = ""
 
         url2 = "https://techcrunch.com/wp-json/wp/v2/comments?post="+str(p_id)+"&order=asc&tc_hierarchical=flat"
+        time.sleep(.1)
         comm_response = requests.request("GET",url2)
         comm_as_dict = {}
         if len(comm_response.text) > 2:
