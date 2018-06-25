@@ -8,4 +8,4 @@ while True:
 	print(trans.translate(text,dest="hi").text)
 	print(count)
 	count += 1
-	time.sleep(15)
+	time.sleep(30)
